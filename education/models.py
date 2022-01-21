@@ -12,7 +12,7 @@ class Education(models.Model):
     create_date = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     update_date = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización")
 
-    class META:
+    class Meta:
         verbose_name="Formación reglada"
         verbose_name_plural="Formaciones regladas"
         ordering = ["-date", ]
@@ -33,7 +33,7 @@ class Certificate(models.Model):
     create_date = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     update_date = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización")
 
-    class META:
+    class Meta:
         verbose_name="Certificado formativo"
         verbose_name_plural="Certificados formativos"
         ordering = ["-date", ]
