@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'about',
     'education',
-    'carreer'
+    'carreer',
+    'projects'
 ]
 
 MIDDLEWARE = [
