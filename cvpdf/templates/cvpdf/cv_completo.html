@@ -1,0 +1,21 @@
+{% extends "cvpdf/base-pdf.html" %}
+{% block content %}
+
+<table>
+{% for carreer in carreers %}
+    <tr>
+        <td class="job">
+            <img src="{{ url }}{{ carreer.logo_company.url }}" />
+            {{ carreer.job|upper }}
+            <small>{{ carreer.company }} - </small>
+            <p class="edu-description">{{ carreer.description }}</p>
+            <div class="job-tech">
+                {% for tech in carreer.technologies.all %}
+                <img src="{{ url }}{{ tech.logo.url }}" />
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

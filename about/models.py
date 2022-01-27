@@ -8,6 +8,7 @@ class About(models.Model):
     photo = models.ImageField(upload_to="foto/", verbose_name="Fotografía")
     video = models.URLField(verbose_name="Enlace Video presentación", blank=True)
     name = models.CharField(max_length=200, verbose_name="Nombre y apellidos")
+    subtitle = models.CharField(max_length=250, verbose_name="Puesto")
     country = models.CharField(max_length=100, verbose_name="Pais")
     city = models.CharField(max_length=100, verbose_name="Ciudad")
     phone = models.CharField(max_length=200, verbose_name="Teléfono")

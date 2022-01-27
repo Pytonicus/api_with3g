@@ -15,11 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from cvpdf import views as cv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cvpdf/cv_completo', cv.cv_completo, name="cv_completo")
 ]
 
 admin.site.site_header = "API With3G"
 admin.site.index_title = "Configuración API With3G"
 admin.site.site_title = "Configuración API With3G"
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
